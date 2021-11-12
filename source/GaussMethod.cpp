@@ -6,9 +6,9 @@ int GaussMethod::dimensionOfMatrixFromFile(std::string slaepath)
 	file.open(slaepath);
 	if (file.is_open())
 	{
-		//Если открытие файла прошло успешно
+		//Р•СЃР»Рё РѕС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р° РїСЂРѕС€Р»Рѕ СѓСЃРїРµС€РЅРѕ
 
-		//Подсчитаем кол-во чисел в файле
+		//РџРѕРґСЃС‡РёС‚Р°РµРј РєРѕР»-РІРѕ С‡РёСЃРµР» РІ С„Р°Р№Р»Рµ
 		int count = 0;
 		int temp;
 
@@ -18,11 +18,11 @@ int GaussMethod::dimensionOfMatrixFromFile(std::string slaepath)
 			count++;
 		}
 
-		//Вначале переведем каретку в потоке в начало файла
+		//Р’РЅР°С‡Р°Р»Рµ РїРµСЂРµРІРµРґРµРј РєР°СЂРµС‚РєСѓ РІ РїРѕС‚РѕРєРµ РІ РЅР°С‡Р°Р»Рѕ С„Р°Р№Р»Р°
 		file.seekg(0, std::ios::beg);
 		file.clear();
 
-		//Подсчитаем кол-во отступов в строке
+		//РџРѕРґСЃС‡РёС‚Р°РµРј РєРѕР»-РІРѕ РѕС‚СЃС‚СѓРїРѕРІ РІ СЃС‚СЂРѕРєРµ
 		int count_space = 0;
 		char symbol;
 
@@ -33,30 +33,30 @@ int GaussMethod::dimensionOfMatrixFromFile(std::string slaepath)
 			if (symbol == '\n') break;
 		}
 
-		//Теперь мы знаем сколько чисел в файле и сколько пробелов в первой строке.
-		//Теперь можем считать матрицу.
+		//РўРµРїРµСЂСЊ РјС‹ Р·РЅР°РµРј СЃРєРѕР»СЊРєРѕ С‡РёСЃРµР» РІ С„Р°Р№Р»Рµ Рё СЃРєРѕР»СЊРєРѕ РїСЂРѕР±РµР»РѕРІ РІ РїРµСЂРІРѕР№ СЃС‚СЂРѕРєРµ.
+		//РўРµРїРµСЂСЊ РјРѕР¶РµРј СЃС‡РёС‚Р°С‚СЊ РјР°С‚СЂРёС†Сѓ.
 		int n = count / (count_space + 1);
 		return n;
 		file.close();
 	}
 	else
 	{
-		//Если открытие файла прошло не успешно
-		std::cout << "Файл не найден.";
+		//Р•СЃР»Рё РѕС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р° РїСЂРѕС€Р»Рѕ РЅРµ СѓСЃРїРµС€РЅРѕ
+		std::cout << "Р¤Р°Р№Р» РЅРµ РЅР°Р№РґРµРЅ.";
 		return 0;
 	}
 }
 
 double** GaussMethod::slaeFromFile(std::string slaepath)
 {
-	//Считаем СЛАУ из файла в двумерный динамический массив
+	//РЎС‡РёС‚Р°РµРј РЎР›РђРЈ РёР· С„Р°Р№Р»Р° РІ РґРІСѓРјРµСЂРЅС‹Р№ РґРёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ
 	std::ifstream file;
 	file.open(slaepath);
 	if (file.is_open())
 	{
-		//Если открытие файла прошло успешно
+		//Р•СЃР»Рё РѕС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р° РїСЂРѕС€Р»Рѕ СѓСЃРїРµС€РЅРѕ
 
-		//Подсчитаем кол-во чисел в файле
+		//РџРѕРґСЃС‡РёС‚Р°РµРј РєРѕР»-РІРѕ С‡РёСЃРµР» РІ С„Р°Р№Р»Рµ
 		int count = 0;
 		int temp;
 
@@ -66,11 +66,11 @@ double** GaussMethod::slaeFromFile(std::string slaepath)
 			count++;
 		}
 
-		//Вначале переведем каретку в потоке в начало файла
+		//Р’РЅР°С‡Р°Р»Рµ РїРµСЂРµРІРµРґРµРј РєР°СЂРµС‚РєСѓ РІ РїРѕС‚РѕРєРµ РІ РЅР°С‡Р°Р»Рѕ С„Р°Р№Р»Р°
 		file.seekg(0, std::ios::beg);
 		file.clear();
 
-		//Подсчитаем кол-во отступов в строке
+		//РџРѕРґСЃС‡РёС‚Р°РµРј РєРѕР»-РІРѕ РѕС‚СЃС‚СѓРїРѕРІ РІ СЃС‚СЂРѕРєРµ
 		int count_space = 0;
 		char symbol;
 
@@ -81,18 +81,18 @@ double** GaussMethod::slaeFromFile(std::string slaepath)
 			if (symbol == '\n') break;
 		}
 
-		//Опять переходим в потоке в начало файл
+		//РћРїСЏС‚СЊ РїРµСЂРµС…РѕРґРёРј РІ РїРѕС‚РѕРєРµ РІ РЅР°С‡Р°Р»Рѕ С„Р°Р№Р»
 		file.seekg(0, std::ios::beg);
 		file.clear();
 
-		//Теперь мы знаем сколько чисел в файле и сколько пробелов в первой строке.
-		//Теперь можем считать матрицу.
+		//РўРµРїРµСЂСЊ РјС‹ Р·РЅР°РµРј СЃРєРѕР»СЊРєРѕ С‡РёСЃРµР» РІ С„Р°Р№Р»Рµ Рё СЃРєРѕР»СЊРєРѕ РїСЂРѕР±РµР»РѕРІ РІ РїРµСЂРІРѕР№ СЃС‚СЂРѕРєРµ.
+		//РўРµРїРµСЂСЊ РјРѕР¶РµРј СЃС‡РёС‚Р°С‚СЊ РјР°С‚СЂРёС†Сѓ.
 		int n = count / (count_space + 1);
 		int m = count_space + 1;
 		double** slae = new double* [n];
 		for (int i = 0; i < n; i++) slae[i] = new double[m];
 
-		//Считаем матрицу из файла
+		//РЎС‡РёС‚Р°РµРј РјР°С‚СЂРёС†Сѓ РёР· С„Р°Р№Р»Р°
 		for (int i = 0; i < n; i++)
 			for (int j = 0; j < m; j++)
 				file >> slae[i][j];
@@ -103,8 +103,8 @@ double** GaussMethod::slaeFromFile(std::string slaepath)
 	}
 	else
 	{
-		//Если открытие файла прошло не успешно
-		std::cout << "Файл не найден.";
+		//Р•СЃР»Рё РѕС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р° РїСЂРѕС€Р»Рѕ РЅРµ СѓСЃРїРµС€РЅРѕ
+		std::cout << "Р¤Р°Р№Р» РЅРµ РЅР°Р№РґРµРЅ.";
 		return nullptr;
 	}
 
@@ -158,13 +158,13 @@ double* GaussMethod::gauss(double** a, double* y, int n)
 {
 	double* x, max;
 	int k, index;
-	const double eps = 0.000001;  // точность
+	const double eps = 0.000001;  // С‚РѕС‡РЅРѕСЃС‚СЊ
 	x = new double[n];
 	k = 0;
 	std::ofstream fout("slae.txt");
 
-	//Вывод в файл матрицы до преобразования
-	fout << "Матрица до преобразования:" << std::endl;
+	//Р’С‹РІРѕРґ РІ С„Р°Р№Р» РјР°С‚СЂРёС†С‹ РґРѕ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ
+	fout << "РњР°С‚СЂРёС†Р° РґРѕ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ:" << std::endl;
 	for (int i = 0; i < n; i++) {
 		fout << "|";
 		for (int j = 0; j < n; j++) {
@@ -177,7 +177,7 @@ double* GaussMethod::gauss(double** a, double* y, int n)
 
 	while (k < n)
 	{
-		// Поиск строки с максимальным a[i][k]
+		// РџРѕРёСЃРє СЃС‚СЂРѕРєРё СЃ РјР°РєСЃРёРјР°Р»СЊРЅС‹Рј a[i][k]
 		max = abs(a[k][k]);
 		index = k;
 		for (int i = k + 1; i < n; i++)
@@ -188,12 +188,12 @@ double* GaussMethod::gauss(double** a, double* y, int n)
 				index = i;
 			}
 		}
-		// Перестановка строк
+		// РџРµСЂРµСЃС‚Р°РЅРѕРІРєР° СЃС‚СЂРѕРє
 		if (max < eps)
 		{
-			// нет ненулевых диагональных элементов
-			std::cout << "Решение получить невозможно из-за нулевого столбца ";
-			std::cout << index << " матрицы A" << std::endl;
+			// РЅРµС‚ РЅРµРЅСѓР»РµРІС‹С… РґРёР°РіРѕРЅР°Р»СЊРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ
+			std::cout << "Р РµС€РµРЅРёРµ РїРѕР»СѓС‡РёС‚СЊ РЅРµРІРѕР·РјРѕР¶РЅРѕ РёР·-Р·Р° РЅСѓР»РµРІРѕРіРѕ СЃС‚РѕР»Р±С†Р° ";
+			std::cout << index << " РјР°С‚СЂРёС†С‹ A" << std::endl;
 			return 0;
 		}
 		for (int j = 0; j < n; j++)
@@ -205,15 +205,15 @@ double* GaussMethod::gauss(double** a, double* y, int n)
 		double temp = y[k];
 		y[k] = y[index];
 		y[index] = temp;
-		// Нормализация уравнений
+		// РќРѕСЂРјР°Р»РёР·Р°С†РёСЏ СѓСЂР°РІРЅРµРЅРёР№
 		for (int i = k; i < n; i++)
 		{
 			double temp = a[i][k];
-			if (abs(temp) < eps) continue; // для нулевого коэффициента пропустить
+			if (abs(temp) < eps) continue; // РґР»СЏ РЅСѓР»РµРІРѕРіРѕ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° РїСЂРѕРїСѓСЃС‚РёС‚СЊ
 			for (int j = 0; j < n; j++)
 				a[i][j] = a[i][j] / temp;
 			y[i] = y[i] / temp;
-			if (i == k)  continue; // уравнение не вычитать само из себя
+			if (i == k)  continue; // СѓСЂР°РІРЅРµРЅРёРµ РЅРµ РІС‹С‡РёС‚Р°С‚СЊ СЃР°РјРѕ РёР· СЃРµР±СЏ
 			for (int j = 0; j < n; j++)
 				a[i][j] = a[i][j] - a[k][j];
 			y[i] = y[i] - y[k];
@@ -221,9 +221,9 @@ double* GaussMethod::gauss(double** a, double* y, int n)
 		k++;
 	}
 
-	//Вывод в файл матрицы после преобразования
+	//Р’С‹РІРѕРґ РІ С„Р°Р№Р» РјР°С‚СЂРёС†С‹ РїРѕСЃР»Рµ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ
 	fout.open("upper_triangle_matrix.txt");
-	fout << "Матрица после преобразования:" << std::endl;
+	fout << "РњР°С‚СЂРёС†Р° РїРѕСЃР»Рµ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ:" << std::endl;
 	for (int i = 0; i < n; i++) {
 		fout << "|";
 		for (int j = 0; j < n; j++) {
@@ -234,7 +234,7 @@ double* GaussMethod::gauss(double** a, double* y, int n)
 	}
 	fout.close();
 	
-	// Обратная подстановка и вывод в файл найденных неизвестных
+	// РћР±СЂР°С‚РЅР°СЏ РїРѕРґСЃС‚Р°РЅРѕРІРєР° Рё РІС‹РІРѕРґ РІ С„Р°Р№Р» РЅР°Р№РґРµРЅРЅС‹С… РЅРµРёР·РІРµСЃС‚РЅС‹С…
 	fout.open("result.txt");
 	for (k = n - 1; k >= 0; k--)
 	{
@@ -253,19 +253,19 @@ double GaussMethod::discrepancy(double** a, double* b, double* x, int n)
 	double* dx = new double[n];
 
 	dx = multMatrix(a, x, n);
-	for (int i = 0; i < n; i++) {        //находим dx как  Ax-b=dx
+	for (int i = 0; i < n; i++) {        //РЅР°С…РѕРґРёРј dx РєР°Рє  Ax-b=dx
 		dx[i] -= b[i];
 		//cout << dx[i] << endl;
 	}
 	double norma;
 	double norma1 = 0;
 	double norma2 = 0;
-	for (int i = 0; i < n; i++) {           // Находим норму 1
+	for (int i = 0; i < n; i++) {           // РќР°С…РѕРґРёРј РЅРѕСЂРјСѓ 1
 		if (abs(dx[i]) >= norma1) {
 			norma1 = abs(dx[i]);
 		}
 	}
-	for (int i = 0; i < n; i++) {          //Находим норму 2
+	for (int i = 0; i < n; i++) {          //РќР°С…РѕРґРёРј РЅРѕСЂРјСѓ 2
 		norma2 += abs(dx[i]);
 	}
 	if (norma1 >= norma2) {
@@ -277,9 +277,9 @@ double GaussMethod::discrepancy(double** a, double* b, double* x, int n)
 	double p = 0.00000000000001;
 	norma = norma * p;
 
-	//Вывод в файл невязки
+	//Р’С‹РІРѕРґ РІ С„Р°Р№Р» РЅРµРІСЏР·РєРё
 	std::ofstream fout("discrepancy.txt");
-	fout << "||Ax-B||=";                        //Находим максимальную норму для оценки погрешности 
+	fout << "||Ax-B||=";                        //РќР°С…РѕРґРёРј РјР°РєСЃРёРјР°Р»СЊРЅСѓСЋ РЅРѕСЂРјСѓ РґР»СЏ РѕС†РµРЅРєРё РїРѕРіСЂРµС€РЅРѕСЃС‚Рё 
 	fout << norma << std::endl;
 	fout.close();
 
@@ -296,7 +296,7 @@ double* GaussMethod::multMatrix(double** a, double* b, int n)
 	{
 		c[j] = 0;
 		for (int k = 0; k < n; k++)
-			c[j] += a[j][k] * b[k];                  //Умножаем матрицу n x n на матрицу n x 1 
+			c[j] += a[j][k] * b[k];                  //РЈРјРЅРѕР¶Р°РµРј РјР°С‚СЂРёС†Сѓ n x n РЅР° РјР°С‚СЂРёС†Сѓ n x 1 
 
 	}
 	return c;
@@ -305,7 +305,7 @@ double* GaussMethod::multMatrix(double** a, double* b, int n)
 double** GaussMethod::reverseMatrix(double** matrix, int n)
 {
 	int i, j, k;
-	//создание единичной матрицы 
+	//СЃРѕР·РґР°РЅРёРµ РµРґРёРЅРёС‡РЅРѕР№ РјР°С‚СЂРёС†С‹ 
 	double** mob = new double* [n];
 	for (i = 0; i < n; i++)
 	{
@@ -313,7 +313,7 @@ double** GaussMethod::reverseMatrix(double** matrix, int n)
 		for (j = 0; j < n; j++)mob[i][j] = 0;
 		mob[i][i] = 1;
 	}
-	//прямой ход методом Гаусса
+	//РїСЂСЏРјРѕР№ С…РѕРґ РјРµС‚РѕРґРѕРј Р“Р°СѓСЃСЃР°
 	double a, b;
 	for (i = 0; i < n; i++)
 	{
@@ -333,7 +333,7 @@ double** GaussMethod::reverseMatrix(double** matrix, int n)
 
 double GaussMethod::determinant(double** matrix, int n, double epsilon)
 {
-	//Предполагается, что матрица квадратная
+	//РџСЂРµРґРїРѕР»Р°РіР°РµС‚СЃСЏ, С‡С‚Рѕ РјР°С‚СЂРёС†Р° РєРІР°РґСЂР°С‚РЅР°СЏ
 	int pivot_index = -1;
 	double pivot_value = 0;
 	double determinant = 1;
@@ -349,16 +349,16 @@ double GaussMethod::determinant(double** matrix, int n, double epsilon)
 			}
 		}
 
-		//Если опорный элемент равен нулю (эпсилон для сброса погрешности)
+		//Р•СЃР»Рё РѕРїРѕСЂРЅС‹Р№ СЌР»РµРјРµРЅС‚ СЂР°РІРµРЅ РЅСѓР»СЋ (СЌРїСЃРёР»РѕРЅ РґР»СЏ СЃР±СЂРѕСЃР° РїРѕРіСЂРµС€РЅРѕСЃС‚Рё)
 		if (pivot_value < epsilon)
 		{
-			//Матрица вырождена
+			//РњР°С‚СЂРёС†Р° РІС‹СЂРѕР¶РґРµРЅР°
 			return 0;
 		}
 
 		if (pivot_index != i)
 		{
-			//Обменяем строки местами
+			//РћР±РјРµРЅСЏРµРј СЃС‚СЂРѕРєРё РјРµСЃС‚Р°РјРё
 			double* temp = matrix[i];
 			matrix[i] = matrix[pivot_index];
 			matrix[pivot_index] = temp;
@@ -390,7 +390,7 @@ void GaussMethod::sweepMethod(double* v1, double* v2, double* v3, double* d, dou
 	double* alpha = new double[n];
 	double* beta = new double[n];
 
-	y[0] = v2[0]; //Нулевые коэффиценты
+	y[0] = v2[0]; //РќСѓР»РµРІС‹Рµ РєРѕСЌС„С„РёС†РµРЅС‚С‹
 	alpha[0] = -1 * v3[0] / y[0];
 	beta[0] = d[0] / y[0];
 
